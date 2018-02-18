@@ -1,0 +1,27 @@
+PA2_srracca -- READ ME
+
+Summary of Program
+
+life.c is the main program of the function, which calls on functions such as fillBoard and PlayOne to run Conway's game of life. It takes the commands given by the user from the terminal to play. First it sets the x and y values of the board, then gets the amount of generations played. From there the board is filled with what was given by the input file. Then depending on the optional arguments of print and pause, it either prints the board each generation and pauses between each generation, or does not, depending on user input. The game terminates through one of the conditions given, and prints the final configuration, the amount of generations, and what condition it was.
+
+How to Run
+
+1) Open the terminal
+2) Have an input file at the ready
+3) Run the functions based on commands at least have:
+        ./life
+        an x value for the board
+        a y value for the board
+        the amount of generations to play
+        the name of the input file
+4) Optional: Can include the print and pause commands, must have a print command to have a pause
+        print =  prints each generation (input = y/n)
+        pause = pauses between each printed generation (input = y/n)
+
+
+Problems
+
+Personally, I found this program often very difficult, due to my lack of experience. I found that the way to allocate memory for the array given by the Data Allocation slides from professor Lauer did not work at all, instead it only worked if one use malloc. Also I often had to ask for help from other students to explain what certain errors I had meant, and how to fix them. 
+
+This project does not work. I had segmentations faults up until nearing the deadline, and fixed it about two hours before. Currently, its repeating the array multiple times, and only giving the 'o' character. This is because the program is currently stuck in a loop, because conditions are not being met. The problems that could be fixed are that life.c is not meeting conditions to terminate, nor is PlayOne actually writing, it is just filled with x. The generations played is still at 0, which I believe is because it is not updated outside of the for loop. I plan on working on this after, putting gensPlayed outside of the loop so it can be updated, which I believe is what is happening, also I believe because of this exact same for loop problem I'm having in life, that that is why the array is just being filled with x.
+
